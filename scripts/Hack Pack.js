@@ -28,7 +28,7 @@ user.admin = true;
             case 65: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = -0.3; break; //"a"
             case 83: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0.3;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0; break; //"s"
             case 68: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0.3; break; //"d"
-            case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode;); break;//C
+            case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode();); break;//C
         }
 	});
  	document.addEventListener('keyup', function(e) {
