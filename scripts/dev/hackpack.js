@@ -17,7 +17,7 @@ GameSettings.user.plus = true;
 user.plus = true;
 GameSettings.requireTrackVerification = false;
 user.admin = true;
-    var recordData;
+    var a;
     document.addEventListener('keydown', function(e) {
 		switch (e.keyCode) {
 			case 16: GameSettings.physicsSectorSize = 0; break;//shift
@@ -30,8 +30,8 @@ user.admin = true;
             case 83: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0.3;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0; break; //"s"
             case 68: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0.3; break; //"d"
             case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode());GameManager.game.currentScene.message.show("Track Copied!",50,"#08faf3"); break;//C
-            case 88: recordData = GameManager.game.currentScene.playerManager.firstPlayer._gamepad;GameManager.game.currentScene.playerManager.firstPlayer._createCheckpoint(GameManager.game.currentScene.camera.position,GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.dir); break;
-            case 13: console.log(GameManager.game.currentScene.playerManager.firstPlayer._gamepad);GameManager.game.currentScene.playerManager.firstPlayer._gamepad = recordData; break;
+            case 88: const recordData = GameManager.game.currentScene.playerManager.firstPlayer._gamepad.records;a = recordData;GameManager.game.currentScene.playerManager.firstPlayer._createCheckpoint(GameManager.game.currentScene.camera.position,GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.dir); break;
+            case 13: console.log(GameManager.game.currentScene.playerManager.firstPlayer._gamepad);setTimeout(function(){ GameManager.game.currentScene.playerManager.firstPlayer._gamepad.records = a;console.log(a); }, 40); break;
         }
 	});
  	document.addEventListener('keyup', function(e) {
