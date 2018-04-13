@@ -31,7 +31,7 @@ user.admin = true;
             case 68: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0.3; break; //"d"
             case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode());GameManager.game.currentScene.message.show("Track Copied!",50,"#08faf3"); break;//C
             case 88: recordData.push(GameManager.game.currentScene.playerManager.firstPlayer._gamepad);GameManager.game.currentScene.playerManager.firstPlayer._createCheckpoint(GameManager.game.currentScene.camera.position,GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.dir); break;
-            case 13: var p = recordData.length-1;DaGameManager.game.currentScene.playerManager.firstPlayer._gamepad = recordData[p]; break;
+            case 13: var p = recordData.length-1;GameManager.game.currentScene.playerManager.firstPlayer._gamepad = recordData[p]; break;
         }
 	});
  	document.addEventListener('keyup', function(e) {
