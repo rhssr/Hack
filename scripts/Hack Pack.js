@@ -6,8 +6,7 @@
 // @grant        unsafeWindow
 // @grant        GM_setClipboard
 // ==/UserScript==
-
-(function() {
+(() => {
 GameSettings.vehiclePowerup.minTime = -999;
 GameSettings.vehiclePowerup.time = 0;
 GameSettings.vehiclePowerup.maxTime = 999;
@@ -17,7 +16,8 @@ GameSettings.user.plus = true;
 user.plus = true;
 GameSettings.requireTrackVerification = false;
 user.admin = true;
-    document.addEventListener('keydown', function(e) {
+    var a;
+    document.addEventListener('keydown', e => {
 		switch (e.keyCode) {
 			case 16: GameSettings.physicsSectorSize = 0; break;//shift
             case 80: GameManager.game.currentScene.trackComplete(); break;//"p"
@@ -28,10 +28,10 @@ user.admin = true;
             case 65: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = -0.3; break; //"a"
             case 83: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0.3;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0; break; //"s"
             case 68: GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.y = 0;GameManager.game.currentScene.playerManager.firstPlayer._baseVehicle.gravity.x = 0.3; break; //"d"
-            case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode());GameManager.game.currentScene.message.show("Track Copied!",50,"#08faf3"); break;//C
-        }
+            case 67: GM_setClipboard(GameManager.game.currentScene.track.getCode());GameManager.game.currentScene.message.show("Track Copied!",50,"#8A2BE2"); break;//C
+ }
 	});
- 	document.addEventListener('keyup', function(e) {
+ 	document.addEventListener('keyup', e => {
 		switch (e.keyCode) {
 			case 16: GameSettings.physicsSectorSize = 100; break;//shift
 		}
