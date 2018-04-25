@@ -1714,7 +1714,7 @@
                         i = e.getGamepad(),
                         s = i.getReplayString(),
                         n = this.settings,
-                        r = this.ticks,
+                        r = this.ticks*2,
                         o = P(r / n.drawFPS * 1e3),
                         a = $("#track-data").data("t_id"),
                         h = {
@@ -1726,7 +1726,7 @@
                             fps: 25,
                             time: o
                         },
-                        l = h.t_id + "|" + h.u_id + "|" + h.code + "|" + h.run_ticks + "|" + h.vehicle + "|" + h.fps + "|erxrHHcksIHHksktt8933XhwlstTekz",
+                        l = h.t_id + "|" + h.u_id + "|" + h.code + "|" + h.run_ticks*2 + "|" + h.vehicle + "|" + h.fps + "|erxrHHcksIHHksktt8933XhwlstTekz",
                         c = S.SHA256(l).toString();
                     h.sig = c;
                     var u = this.races,
@@ -4815,7 +4815,7 @@
             updatePlayback: function() {
                 var t = this.keysToPlay,
                     e = this.playback,
-                    i = this.scene.ticks;
+                    i = this.scene.ticks*2;
                 for(var s in t) {
                     var n = t[s],
                         r = n + "_up",
@@ -4828,7 +4828,7 @@
                 }
             },
             updateRecording: function() {
-                var t = this.scene.ticks,
+                var t = this.scene.ticks*2,
                     e = this.records,
                     i = (this.keymap, this.keysToRecord),
                     s = this.tickDownButtons,
