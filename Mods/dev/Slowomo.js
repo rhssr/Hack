@@ -175,7 +175,7 @@
                     createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCED, createjs.Ticker.setFPS(this.settings.drawFPS), createjs.Ticker.on("tick", this.update.bind(this))
                 },
                 update: function() {
-                    this.currentScene.update(), this.tickCount++
+                    this.currentScene.update(), this.tickCount+=0.5
                 },
                 switchScene: function(t) {
                     null !== this.currentScene && this.currentScene.close(), this.currentScene = new r[t](this)
