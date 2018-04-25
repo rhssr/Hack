@@ -1064,7 +1064,7 @@
                 this.playing = !0
             },
             update: function() {
-                this.updateToolHandler(), this.mouse.update(), this.state.showDialog || (this.updateGamepads(), this.checkGamepads()), this.screen.update(), this.updateControls(), this.camera.update(), this.sound.update(), this.restartTrack && this.restart(), !this.state.paused && this.playing && (this.message.update(), this.updatePlayers(), this.score.update(), this.playerManager.firstPlayer.complete ? this.trackComplete() : this.ticks++), this.vehicleTimer.update(), (this.importCode || this.clear) && this.createTrack(), this.isStateDirty() && this.updateState(), this.stage.clear(), this.draw(), this.stage.update(), this.camera.updateZoom()
+                this.updateToolHandler(), this.mouse.update(), this.state.showDialog || (this.updateGamepads(), this.checkGamepads()), this.screen.update(), this.updateControls(), this.camera.update(), this.sound.update(), this.restartTrack && this.restart(), !this.state.paused && this.playing && (this.message.update(), this.updatePlayers(), this.score.update(), this.playerManager.firstPlayer.complete ? this.trackComplete() : this.ticks+=0.5), this.vehicleTimer.update(), (this.importCode || this.clear) && this.createTrack(), this.isStateDirty() && this.updateState(), this.stage.clear(), this.draw(), this.stage.update(), this.camera.updateZoom()
             },
             isStateDirty: function() {
                 var t = this.oldState,
@@ -1488,7 +1488,7 @@
                 this.controls && this.controls.isVisible() !== !1 || this.toolHandler.update()
             },
             update: function() {
-                this.ready ? (this.updateToolHandler(), this.mouse.update(), this.state.paused || this.state.showDialog || (this.updateGamepads(), this.checkGamepads()), this.screen.update(), this.updateControls(), this.camera.update(), this.sound.update(), this.restartTrack && this.restart(), !this.state.paused && this.state.playing && (this.message.update(), this.updatePlayers(), this.playerManager.firstPlayer.complete ? this.trackComplete() : this.ticks++), this.updateScore(), this.vehicleTimer.update(), this.isStateDirty() && this.updateState(), this.stage.clear(), this.draw(), this.stage.update(), this.camera.updateZoom()) : this.importCode && this.createTrack()
+                this.ready ? (this.updateToolHandler(), this.mouse.update(), this.state.paused || this.state.showDialog || (this.updateGamepads(), this.checkGamepads()), this.screen.update(), this.updateControls(), this.camera.update(), this.sound.update(), this.restartTrack && this.restart(), !this.state.paused && this.state.playing && (this.message.update(), this.updatePlayers(), this.playerManager.firstPlayer.complete ? this.trackComplete() : this.ticks+=0.5), this.updateScore(), this.vehicleTimer.update(), this.isStateDirty() && this.updateState(), this.stage.clear(), this.draw(), this.stage.update(), this.camera.updateZoom()) : this.importCode && this.createTrack()
             },
             isStateDirty: function() {
                 var t = this.oldState,
@@ -7164,7 +7164,7 @@
                     var e = t.paused,
                         i = t._getTime(),
                         s = i - t._lastTime;
-                    if(t._lastTime = i, t._ticks++, e && (t._pausedTicks++, t._pausedTime += s), t.hasEventListener("tick")) {
+                    if(t._lastTime = i, t._ticks+=0.5, e && (t._pausedTicks+=0.5, t._pausedTime += s), t.hasEventListener("tick")) {
                         var n = new createjs.Event("tick"),
                             r = t.maxDelta;
                         n.delta = r && s > r ? r : s, n.paused = e, n.time = i, n.runTime = i - t._pausedTime, t.dispatchEvent(n)
